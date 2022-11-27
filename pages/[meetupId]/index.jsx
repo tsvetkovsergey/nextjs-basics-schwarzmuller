@@ -35,7 +35,15 @@ export async function getStaticPaths(context) {
   return {
     // fallback: false - means that you defined
     // all supported paths here
-    fallback: false,
+    //
+    // true - Next.js try to generate page on demand
+    // user will see blank page during generating
+    // you should work with blank page
+    //
+    // 'blocking' - generating on demand
+    // but user won't see new page until
+    // it is ready
+    fallback: 'blocking',
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),

@@ -56,7 +56,7 @@ export async function getStaticProps() {
         return { title, image, address, id: _id.toString() };
       }),
     },
-    revalidate: 10,
+    revalidate: 1,
   };
 }
 
